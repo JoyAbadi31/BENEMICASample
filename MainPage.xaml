@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BENEMICASample.MainPage"
+             Title="Home"
+             BackgroundColor="White">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="25">
+            <Label x:Name="GreetingLabel"
+                   Text="Hello, User!"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   HorizontalOptions="Center" />
+
+            <StackLayout>
+                <Label Text="Menu Options"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
+                <Picker x:Name="DropdownMenu"
+                        Title="Choose an option"
+                        ItemsSource="{Binding MenuOptions}"
+                        TextColor="Black"
+                        BackgroundColor="WhiteSmoke" />
+                <Label x:Name="SelectedOptionLabel"
+                       Text="Selected Option: None"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalOptions="Start" />
+            </StackLayout>
+
+            <BoxView HeightRequest="1" BackgroundColor="DarkGray" />
+
+            <StackLayout>
+                <Label Text="Select a Date"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="Black" />
+                <DatePicker x:Name="DatePickerControl"
+                            TextColor="Black"
+                            BackgroundColor="WhiteSmoke" />
+                <Label x:Name="SelectedDateLabel"
+                       Text="Selected Date: None"
+                       FontSize="18"
+                       TextColor="Black"
+                       HorizontalOptions="Start" />
+            </StackLayout>
+
+            <BoxView HeightRequest="1" BackgroundColor="DarkGray" />
+            
+            <Border BackgroundColor="White" Padding="15" Stroke="#D3D3D3" StrokeThickness="1">
+                <StackLayout Spacing="10">
+
+                    <Label Text="Contact Form"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="Black" />
+
+                    <Entry x:Name="NameEntry"
+                           Placeholder="Enter your name"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="White" />
+
+                    <Entry x:Name="CompanyEntry"
+                           Placeholder="Enter your company name"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="White" />
+
+                    <Entry x:Name="EmployeeCountEntry"
+                           Placeholder="Enter number of employees"
+                           Keyboard="Numeric"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="White" />
+
+                    <Entry x:Name="EmailEntry"
+                           Placeholder="Enter your email"
+                           Keyboard="Email"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="White" />
+
+                    <Entry x:Name="PhoneEntry"
+                           Placeholder="Enter your phone number"
+                           Keyboard="Telephone"
+                           TextColor="Black"
+                           PlaceholderColor="Gray"
+                           BackgroundColor="White" />
+
+                    <Editor x:Name="MessageEditor"
+                            Placeholder="Enter your message"
+                            AutoSize="TextChanges"
+                            HeightRequest="80"
+                            TextColor="Black"
+                            PlaceholderColor="Gray"
+                            BackgroundColor="White" />
+
+                    <Image x:Name="SelectedImage"
+                           HeightRequest="200"
+                           Aspect="AspectFill"
+                           BackgroundColor="DarkGray"
+                           VerticalOptions="Center" />
+
+                    <Button Text="Upload Image"
+                            Clicked="OnUploadImageButtonClicked"
+                            TextColor="White"
+                            BackgroundColor="#9A6B36"
+                            CornerRadius="10" />
+
+                    <Button Text="Submit"
+                            Clicked="OnSubmitButtonClicked"
+                            TextColor="White"
+                            BackgroundColor="#9A6B36"
+                            CornerRadius="10" />
+                </StackLayout>
+            </Border>
+
+            <BoxView HeightRequest="1" BackgroundColor="DarkGray" />
+
+            <Button Text="Open Maps"
+                    TextColor="White"
+                    BackgroundColor="#9A6B36"
+                    CornerRadius="10"
+                    FontSize="18"
+                    HorizontalOptions="Center"
+                    VerticalOptions="End"
+                    Clicked="OnOpenMapsButtonClicked" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
